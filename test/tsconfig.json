@@ -1,0 +1,21 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {},
+  "filesGlob": [
+    "**/*.ts",
+    "../src/**/*.ts",
+    "../typings/index.d.ts"
+  ],
+  "files": [
+    "base-observable.ts",
+    "observable.ts",
+    "../src/base-observable.ts",
+    "../src/index.ts",
+    "../src/observable.ts",
+    "../src/utils.ts",
+    "../typings/index.d.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  }
+}
