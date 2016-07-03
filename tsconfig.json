@@ -11,7 +11,7 @@
   ],
   "files": [
     "src/base-observable.ts",
-    "src/index.ts",
+    "src/ob.ts",
     "src/observable.ts",
     "src/utils.ts",
     "typings/index.d.ts"

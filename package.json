@@ -12,6 +12,7 @@
   ],
   "license": "MIT",
   "main": "dist/ob.js",
+  "typings": "dist/ob.d.ts",
   "homepage": "https://github.com/ktsn/ob",
   "bugs": "https://github.com/ktsn/ob/issues",
   "repository": {
