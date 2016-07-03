@@ -60,4 +60,19 @@ describe('Observable', () => {
     assert(!error.called)
   })
 
+  it('reduce', () => {
+    const value = sinon.spy()
+    const error = sinon.spy()
+
+    const ob = new Observable<void, number>()
+
+    ob.reduce((acc, value) => acc + value, 0)
+      .subscribe(value, error);
+
+    [1, 1, 2, 3, 5, 8, 13].forEach(n => ob.value(n))
+
+    assert(value.lastCall.calledWith(33))
+    assert(!error.called)
+  })
+
 })

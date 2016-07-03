@@ -24,4 +24,12 @@ export default class Observable<E, V> extends BaseObservable<E, V> {
       }
     })
   }
+
+  reduce<U>(f: (acc: U, val: V) => U, init: U): Observable<E, U> {
+    let acc = init
+    return this.chain<Observable<E, U>, U>((o, val) => {
+      acc = f(acc, val)
+      o.value(acc)
+    })
+  }
 }
