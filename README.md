@@ -16,6 +16,8 @@ function source() {
   window.addEventListener('keypress', event => {
     o.value(event.key)
   })
+
+  return o
 }
 
 source()
