@@ -3,7 +3,8 @@
   "compilerOptions": {
     "target": "es5",
     "noImplicitAny": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "declaration": true
   },
   "filesGlob": [
     "src/**/*.ts",
