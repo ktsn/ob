@@ -1,5 +1,5 @@
 {
-  "name": "ob",
+  "name": "@ktsn/ob",
   "version": "0.1.0",
   "author": "katashin",
   "description": "A tiny and extensible FRP library",
@@ -7,7 +7,7 @@
     "FRP",
     "stream",
     "observable",
-    "little",
+    "tiny",
     "extensible"
   ],
   "license": "MIT",
