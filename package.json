@@ -1,6 +1,6 @@
 {
   "name": "@ktsn/ob",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "katashin",
   "description": "A tiny and extensible FRP library",
   "keywords": [
