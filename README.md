@@ -24,7 +24,7 @@ source()
   .filter(val => val.length === 1)
   .flatMap(val => {
     const num = parseInt(val, 10)
-    if (isNan(num)) {
+    if (isNaN(num)) {
       return Observable.error('parse error')
     } else {
       return Observable.value(num)
@@ -39,8 +39,8 @@ source()
 
 ### Custom operators
 
-You can extends `Observable` class for custom operators.
-If you does not want any build in operators, you should extends `BaseObservable` class.
+You can extend `Observable` class for custom operators.
+If you do not want any built in operators, you should extend `BaseObservable` class.
 
 ```js
 import { Observable } from '@ktsn/ob'
