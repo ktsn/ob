@@ -22,9 +22,9 @@ export default class BaseObservable<E, V> {
     this._subscribers.forEach(s => s.error(error))
   }
 
-  chain<O extends BaseObservable<E, U>, U>(f: (o: O, value: V) => void): O {
-    const Ctor: any = this.constructor
-    const o: O = new Ctor()
+  chain(f: (o: any, value: V) => void): any {
+    const Ctor = <any>this.constructor
+    const o = new Ctor()
 
     this.subscribe(
       val => f(o, val),
@@ -49,14 +49,14 @@ export default class BaseObservable<E, V> {
     }
   }
 
-  static value<O extends BaseObservable<E, V>, E, V>(value: V): O {
-    const o: O = <any>new this<E, V>()
+  static value<E, V>(value: V): any {
+    const o = <any>new this<E, V>()
     o._value = value
     return o
   }
 
-  static error<O extends BaseObservable<E, V>, E, V>(error: E): O {
-    const o: O = <any>new this<E, V>()
+  static error<E, V>(error: E): any {
+    const o = <any>new this<E, V>()
     o._error = error
     return o
   }

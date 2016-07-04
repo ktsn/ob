@@ -8,7 +8,7 @@ describe('Observable', () => {
     const value = sinon.spy()
     const error = sinon.spy()
 
-    Observable.value<Observable<any, number>, any, number>(1)
+    Observable.value(1)
       .map(val => val + 1)
       .map(val => val.toString())
       .subscribe(value, error)
@@ -21,15 +21,14 @@ describe('Observable', () => {
     const value = sinon.spy()
     const error = sinon.spy()
 
-    type O = Observable<string, number>
     const ob = new Observable<string, number>()
 
     ob
       .flatMap(val => {
         if (val > 3) {
-          return Observable.value<O, string, number>(10)
+          return Observable.value<string, number>(10)
         } else {
-          return Observable.error<O, string, number>('failure')
+          return Observable.error<string, number>('failure')
         }
       })
       .subscribe(value, error)

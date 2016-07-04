@@ -56,7 +56,7 @@ describe('BaseObservable', () => {
   })
 
   it('gives constants', () => {
-    let b: any = BaseObservable.value(123)
+    let b = BaseObservable.value(123)
     assert(b instanceof BaseObservable)
     assert(b._value === 123)
     assert(b._error === null)
@@ -68,7 +68,10 @@ describe('BaseObservable', () => {
   })
 
   describe('compativility with sub classes', () => {
-    class Sub<E, V> extends BaseObservable<E, V> {}
+    class Sub<E, V> extends BaseObservable<E, V> {
+      static value: <E, V>(value: V) => Sub<E, V>
+      static error: <E, V>(error: E) => Sub<E, V>
+    }
 
     it('gives sub class instance on chain', () => {
       const s = new Sub()
