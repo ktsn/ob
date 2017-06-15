@@ -20,32 +20,34 @@
     "url": "https://github.com/ktsn/ob.git"
   },
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run lint && npm run test:ci && npm run build",
     "build": "gulp build",
     "lint": "tslint \"src/**/*.ts\" && tslint \"test/**/*.ts\"",
     "test": "gulp test",
-    "test:ci": "webpack --config webpack.config.test.js && testem ci --launch Firefox,PhantomJS",
-    "postinstall": "typings i"
+    "test:ci": "webpack --config webpack.config.test.js && testem ci --launch PhantomJS"
   },
   "devDependencies": {
-    "del": "^2.2.0",
-    "glob": "^7.0.3",
+    "@types/mocha": "^2.2.41",
+    "@types/power-assert": "^1.4.29",
+    "@types/sinon": "^2.3.1",
+    "del": "^3.0.0",
+    "glob": "^7.1.2",
     "gulp": "^3.9.1",
-    "gulp-header": "^1.7.1",
+    "gulp-header": "^1.8.8",
     "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.5.3",
-    "gulp-util": "^3.0.7",
-    "js-yaml": "^3.6.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "js-yaml": "^3.8.4",
     "json-loader": "^0.5.4",
-    "power-assert": "^1.3.1",
-    "run-sequence": "^1.1.5",
-    "sinon": "^2.0.0-pre",
-    "testem": "^1.6.0",
-    "ts-loader": "0.8.1",
-    "tslint": "^3.13.0",
-    "typescript": "^1.8.10",
-    "typings": "^1.0.3",
-    "webpack": "^1.13.0",
-    "webpack-espower-loader": "^1.0.1"
+    "power-assert": "^1.4.4",
+    "run-sequence": "^1.2.2",
+    "sinon": "^2.3.4",
+    "testem": "^1.16.2",
+    "ts-loader": "2.1.0",
+    "tslint": "^5.4.3",
+    "tslint-config-ktsn": "^2.0.1",
+    "typescript": "^2.3.4",
+    "webpack": "^2.6.1",
+    "webpack-espower-loader": "^1.0.2"
   }
 }

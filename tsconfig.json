@@ -2,22 +2,12 @@
   "compileOnSave": false,
   "compilerOptions": {
     "target": "es5",
-    "noImplicitAny": true,
+    "lib": ["es2015"],
+    "strict": true,
     "sourceMap": true,
     "declaration": true
   },
-  "filesGlob": [
-    "src/**/*.ts",
-    "typings/index.d.ts"
-  ],
-  "files": [
-    "src/base-observable.ts",
-    "src/ob.ts",
-    "src/observable.ts",
-    "src/utils.ts",
-    "typings/index.d.ts"
-  ],
-  "atom": {
-    "rewriteTsconfig": true
-  }
+  "include":[
+    "src/**/*.ts"
+  ]
 }

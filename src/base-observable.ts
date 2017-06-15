@@ -6,8 +6,8 @@ interface Subscriber<E, V> {
 }
 
 export default class BaseObservable<E, V> {
-  private _error: E = null
-  private _value: V = null
+  private _error: E | null= null
+  private _value: V | null = null
   private _subscribers: Subscriber<E, V>[] = []
 
   value(value: V): void {
@@ -23,7 +23,7 @@ export default class BaseObservable<E, V> {
   }
 
   chain(f: (o: any, value: V) => void): any {
-    const Ctor = <any>this.constructor
+    const Ctor = this.constructor as any
     const o = new Ctor()
 
     this.subscribe(
@@ -34,9 +34,9 @@ export default class BaseObservable<E, V> {
     return o
   }
 
-  subscribe(fv: (value: V) => void, fe?: (error: E) => void): void {
+  subscribe(fv: (value: V) => void, fe: (error: E) => void = noop): void {
     const s = {
-      error: fe || noop,
+      error: fe,
       value: fv
     }
 
@@ -50,13 +50,13 @@ export default class BaseObservable<E, V> {
   }
 
   static value<E, V>(value: V): any {
-    const o = <any>new this<E, V>()
+    const o = new this<E, V>() as any
     o._value = value
     return o
   }
 
   static error<E, V>(error: E): any {
-    const o = <any>new this<E, V>()
+    const o = new this<E, V>() as any
     o._error = error
     return o
   }

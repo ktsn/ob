@@ -9,12 +9,11 @@ module.exports = {
     libraryTarget: 'umd'
   },
   resolve: {
-    modulesDirectories: ['node_modules'],
-    extensions: ['', '.ts', '.js']
+    extensions: ['.ts', '.js']
   },
   module: {
-    loaders: [
-      { test: /\.ts$/, loader: 'ts-loader' }
+    rules: [
+      { test: /\.ts$/, use: 'ts-loader' }
     ]
   }
 }

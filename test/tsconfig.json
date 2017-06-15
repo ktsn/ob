@@ -1,21 +1,10 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {},
-  "filesGlob": [
-    "**/*.ts",
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "target": "es5"
+  },
+  "include":[
     "../src/**/*.ts",
-    "../typings/index.d.ts"
-  ],
-  "files": [
-    "base-observable.ts",
-    "observable.ts",
-    "../src/base-observable.ts",
-    "../src/ob.ts",
-    "../src/observable.ts",
-    "../src/utils.ts",
-    "../typings/index.d.ts"
-  ],
-  "atom": {
-    "rewriteTsconfig": true
-  }
+    "**/*.ts"
+  ]
 }
